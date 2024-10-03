@@ -1,13 +1,11 @@
 {
-  "name": "black-sheep-king-cli",
+  "name": "@hl/cli",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {},
-  "author": "",
+  "description": "华龙项目脚手架",
+  "author": "yangfeng",
   "license": "ISC",
   "bin": {
-    "mu": "./bin/index.js"
+    "hl": "./bin/index.js"
   },
   "dependencies": {
     "copy-dir": "^1.3.0",
