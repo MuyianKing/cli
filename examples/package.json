@@ -1,0 +1,15 @@
+{
+  "name": "rsbuild-js",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    
+  },
+  "dependencies": {
+    "@mu/cli": "workspace:*"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
