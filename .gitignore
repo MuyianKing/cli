@@ -30,5 +30,4 @@ test-temp-*
 .env.local
 .env.*.local
 
-# ignore directory for artifacts produced by tests
-test-results/
+examples/**

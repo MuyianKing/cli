@@ -1,0 +1,128 @@
+{
+	// vs code 代码片段
+	"vue template": {
+		"scope": "",
+		"prefix": "vue",
+		"body": [
+			"<script setup>",
+			"</script>",
+			"",
+			"<template>",
+			"<div>template$1</div>",
+			"</template>",
+			"",
+			"<style lang='scss' scoped>",
+			"</style>",
+			"$2"
+		],
+		"description": "VUE基础template"
+	},
+	"vue template width name": {
+		"scope": "",
+		"prefix": "vue.name",
+		"body": [
+			"<script setup name='$1'>",
+			"</script>",
+			"",
+			"<template>",
+			"<div>template</div>",
+			"</template>",
+			"",
+			"<style lang='scss' scoped>",
+			"</style>",
+			"$2"
+		],
+		"description": "VUE基础template，script标签增加name属性"
+	},
+	"vue list template": {
+		"scope": "",
+		"prefix": "vue.list",
+		"body": [
+			"<script setup>",
+			"import useListPage from '@list-page'",
+			"",
+			"const {",
+			"HlListPage,",
+			"query,",
+			"getData,",
+			"table_data,",
+			"} = useListPage({",
+			"query: {",
+			"keyword: '',",
+			"},",
+			"server: null,",
+			"})",
+			"",
+			"function handleEdit() {",
+			"console.log('handleEdit')",
+			"}",
+			"</script>",
+			"",
+			"<template>",
+			"<hl-list-page @add=\"handleEdit\">",
+			"<template #search>",
+			"<hl-form-item label=\"关键字\">",
+			"<hl-input v-model=\"query.keyword\" @change=\"getData\" />",
+			"</hl-form-item>",
+			"</template>",
+			"",
+			"<template #table>",
+			"<hl-table :data=\"table_data.data\">",
+			"<hl-table-column type=\"index\" />",
+			"</hl-table>",
+			"</template>",
+			"</hl-list-page>",
+			"</template>",
+			"",
+			"<style lang='scss' scoped>",
+			"</style>",
+		],
+		"description": "列表页基础模板"
+	},
+	"server template": {
+		"scope": "",
+		"prefix": "server",
+		"body": [
+			"import { post } from '@utils/request'",
+			"",
+			"export async function get$1() {",
+			"const result = await post(hl.api)",
+			"return result",
+			"}",
+		],
+		"description": "server api request"
+	},
+	"cl": {
+		"scope": "",
+		"prefix": "hlcloseLoading",
+		"body": [
+			"hl.message.closeLoading()",
+		],
+		"description": "close loading"
+	},
+	"tc": {
+		"scope": "",
+		"prefix": "hltc",
+		"body": [
+			"try {",
+			"",
+			"} catch (e) {",
+			"hl.message.error(e, '$1')",
+			"}"
+		]
+	},
+	"pinia": {
+		"scope": "",
+		"prefix": "hlpinia",
+		"body": [
+			"export default defineStore('$1', {",
+			"  state: () => ({",
+			"",
+			"  }),",
+			"actions: {",
+			"",
+			"},",
+			"})",
+		]
+	}
+}
