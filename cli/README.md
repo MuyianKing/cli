@@ -9,5 +9,5 @@ pnpm i @hl/cli -g
 
 ### 使用
 ```js
-hl create
+hl create 
 ```
