@@ -137,6 +137,11 @@ function loadView(route) {
     comp = 'outer-iframe/IframeTemplate'
   }
 
+  // 统一在最前面加上/
+  if (!comp.startsWith('/')) {
+    comp = `/${comp}`
+  }
+
   let res = null
   for (const path in modules) {
     if (path === comp.toLowerCase()) {
@@ -161,7 +166,7 @@ function addRoutes(router, list) {
 
 function parseParams(str) {
   const params = {}
-  str.replace('?', '').split('&').forEach((p) => {
+  str && str.replace('?', '').split('&').forEach((p) => {
     p = p.split('=')
     if (p.length === 2) {
       params[p[0]] = p[1]

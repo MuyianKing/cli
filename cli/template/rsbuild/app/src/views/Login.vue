@@ -1,5 +1,5 @@
 <script name="UserLoginNoAlive" setup>
-import { clearUserData } from '@hooks/user'
+import { clearUserData } from '@server/user'
 import { login } from '@server/user'
 
 const form = reactive({
@@ -78,7 +78,6 @@ watch(() => route.query, (query) => {
         </div>
         <div class="right">
           <div class="login-container">
-            <!-- <img class="max-w-full mx-auto mb-5" src="@img/login/title.png"> -->
             <div class="w-full text-center text-4xl mb-8">
               赋能中心
             </div>

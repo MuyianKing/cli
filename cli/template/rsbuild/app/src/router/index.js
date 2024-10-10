@@ -1,5 +1,5 @@
 import { WEB_NAME } from '@app'
-import { hasResource } from '@hooks/user'
+import { hasResource } from '@server/user'
 import NProgress from 'nprogress'
 import { createRouter, createWebHashHistory } from 'vue-router'
 import routes from './menu/index'
