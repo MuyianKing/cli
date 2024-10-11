@@ -1,6 +1,11 @@
-<script name="UserLoginNoAlive" setup>
+<script setup>
 import { clearUserData } from '@server/user'
 import { login } from '@server/user'
+import { WEB_NAME } from "@app"
+
+defineOptions({
+  name: "UserLoginNoAlive"
+})
 
 const form = reactive({
   username: '',
@@ -79,7 +84,7 @@ watch(() => route.query, (query) => {
         <div class="right">
           <div class="login-container">
             <div class="w-full text-center text-4xl mb-8">
-              赋能中心
+              {{ WEB_NAME }}
             </div>
             <div class="login-form">
               <el-form ref="login_ref" :model="form" :rules="rules" label-position="top" size="large">
@@ -91,7 +96,8 @@ watch(() => route.query, (query) => {
                   </el-input>
                 </el-form-item>
                 <el-form-item label="密码" prop="password">
-                  <el-input v-model="form.password" placeholder="请输入密码" show-password type="password" @keyup.enter="submitForm">
+                  <el-input v-model="form.password" placeholder="请输入密码" show-password type="password"
+                    @keyup.enter="submitForm">
                     <template #prefix>
                       <img alt="密码" src="@img/login/password.png" style="width: 18px;">
                     </template>
@@ -201,7 +207,7 @@ $url: '@img/login/';
     max-width: 600px !important;
     height: 500px !important;
 
-    & > img {
+    &>img {
       height: 100%;
       width: 100%;
     }

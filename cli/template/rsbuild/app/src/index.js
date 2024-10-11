@@ -12,9 +12,10 @@ import Token from '@server/token'
 import variables from '@style/theme.module.scss'
 import dayjs from 'dayjs'
 import { createApp } from 'vue'
-import useEcharts from '../src/utils/echarts'
+import initEcharts from '@utils/echarts'
+import { error as handleError } from "@hl/utils"
 
-useEcharts()
+initEcharts()
 
 addAPIProvider('', {
   resources: [BASE_URL + ICONIFY_API],
@@ -43,7 +44,7 @@ window.hl = {
 }
 
 const app = createApp(App)
-
+handleError(app)
 app.use(pinia)
 
 useDynamicRoutesStore().initDynamicRoutes(router).finally(() => {
