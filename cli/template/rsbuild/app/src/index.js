@@ -3,7 +3,6 @@ import pinia from '@/pinia'
 import router from '@/router'
 import api from '@api'
 import { BASE_URL, ICONIFY_API, PROJECT_PREFIX, WEB_NAME } from '@app'
-import { registerRequiredComp } from '@hl/task'
 import * as common from '@hl/utils/es/common'
 import * as message from '@hl/utils/es/message'
 import http from '@http'
@@ -12,10 +11,9 @@ import Token from '@server/token'
 import variables from '@style/theme.module.scss'
 import dayjs from 'dayjs'
 import { createApp } from 'vue'
-import initEcharts from '@utils/echarts'
-import { error as handleError } from "@hl/utils"
+import useEcharts from '../src/utils/echarts'
 
-initEcharts()
+useEcharts()
 
 addAPIProvider('', {
   resources: [BASE_URL + ICONIFY_API],
@@ -44,12 +42,11 @@ window.hl = {
 }
 
 const app = createApp(App)
-handleError(app)
+
 app.use(pinia)
 
 useDynamicRoutesStore().initDynamicRoutes(router).finally(() => {
   app
-    .use(registerRequiredComp)
     .use(router)
     .mount('#app')
 

@@ -4,5 +4,5 @@
  * value: 动态引入组件方法
  */
 export default {
-
+  '/home/index': () => import('@views/home/Index.vue'),
 }

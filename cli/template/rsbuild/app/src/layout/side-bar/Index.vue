@@ -1,7 +1,7 @@
 <script name="Sidebar" setup>
 import { WEB_NAME } from '@app'
-import { hasResource } from '@server/user'
 import SubMenu from '@layout/side-bar/components/SubMenu.vue'
+import { hasResource } from '@server/user'
 import theme from '@style/theme.module.scss'
 
 const route = useRoute()

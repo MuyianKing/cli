@@ -1,11 +1,6 @@
-<script setup>
-import { clearUserData } from '@server/user'
-import { login } from '@server/user'
-import { WEB_NAME } from "@app"
-
-defineOptions({
-  name: "UserLoginNoAlive"
-})
+<script name="UserLoginNoAlive" setup>
+import { useRequest } from '@/hooks/useRequest'
+import { clearUserData, login } from '@server/user'
 
 const form = reactive({
   username: '',
@@ -27,11 +22,13 @@ const rules = {
   }],
 }
 
+const { loading, request } = useRequest(login)
+
 // 登录
 function submitForm() {
-  login_ref.value.validate((valid) => {
+  login_ref.value.validate(async (valid) => {
     if (valid) {
-      login(form).then((res) => {
+      request(form).then((res) => {
         afterLogin(res)
       }).catch((err) => {
         hl.message.error(err, '登录失败')
@@ -75,7 +72,7 @@ watch(() => route.query, (query) => {
 </script>
 
 <template>
-  <div class="login-wrapper  text-center ">
+  <div v-loading="loading" class="login-wrapper text-center">
     <div class="login-box-wrapper text-[0px]">
       <div class="main-part">
         <div class="left">
@@ -84,7 +81,7 @@ watch(() => route.query, (query) => {
         <div class="right">
           <div class="login-container">
             <div class="w-full text-center text-4xl mb-8">
-              {{ WEB_NAME }}
+              赋能中心
             </div>
             <div class="login-form">
               <el-form ref="login_ref" :model="form" :rules="rules" label-position="top" size="large">
@@ -96,8 +93,7 @@ watch(() => route.query, (query) => {
                   </el-input>
                 </el-form-item>
                 <el-form-item label="密码" prop="password">
-                  <el-input v-model="form.password" placeholder="请输入密码" show-password type="password"
-                    @keyup.enter="submitForm">
+                  <el-input v-model="form.password" placeholder="请输入密码" show-password type="password" @keyup.enter="submitForm">
                     <template #prefix>
                       <img alt="密码" src="@img/login/password.png" style="width: 18px;">
                     </template>
@@ -207,7 +203,7 @@ $url: '@img/login/';
     max-width: 600px !important;
     height: 500px !important;
 
-    &>img {
+    & > img {
       height: 100%;
       width: 100%;
     }

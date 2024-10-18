@@ -1,6 +1,6 @@
 {
   "name": "@hl/cli",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "description": "华龙项目脚手架",
   "author": "yangfeng",
   "bin": {

@@ -21,8 +21,8 @@ const user = computed(() => {
 </script>
 
 <template>
-  <hl-config-provider :locale="zhCn" :custom-config>
-    <el-watermark :content="[user.name, user.police_id]" class="w-full h-full" :z-index="9999">
+  <hl-config-provider :custom-config :locale="zhCn">
+    <el-watermark :content="[user.name, user.police_id]" :z-index="9999" class="w-full h-full">
       <router-view />
     </el-watermark>
   </hl-config-provider>

@@ -15,7 +15,7 @@ export default defineStore('dynamicRouter', {
     async initDynamicRoutes(router) {
       try {
         this.list = await getRouters({
-          label: 'hl.root',
+          label: 'wj.buildings',
         })
 
         addRoutes(router, filterAsyncRouter(cloneDeep(this.list)))
@@ -78,7 +78,6 @@ function filterAsyncRouter(asyncRouterMap, type = false) {
     }
     if (route.component) {
       route.name = route.path.replace(/-/g, '/').split('/').filter(item => item).map(item => hl.common.firstUpcase(item)).join('')
-
       route.component = loadView(route)
     }
     if (route.children != null && route.children && route.children.length) {

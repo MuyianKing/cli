@@ -45,4 +45,3 @@ export function hasResource(resource_id) {
   const resources_id = useUserStore().resources_id
   return (resource_id && resources_id.includes(resource_id)) || !resource_id
 }
-

@@ -23,9 +23,7 @@ router.beforeEach((to, from, next) => {
   NProgress.start()
 
   const title = useTitle()
-  if (to.meta.title) {
-    title.value = `${WEB_NAME} - ${to.meta.title || ''}`
-  }
+  title.value = `${WEB_NAME} - ${to.meta.title || ''}`
 
   const user = useUserStore()
   const token = user.token
@@ -45,7 +43,7 @@ router.beforeEach((to, from, next) => {
           if (from.path === '/login') {
             const first_path = dynamicRouterStore.getFirstRoute()
             if (first_path) {
-              next({ path: first_path.path })
+              next({ path: first_path.path || '/home' })
             } else {
               next({ path: '/forbidden' })
             }
