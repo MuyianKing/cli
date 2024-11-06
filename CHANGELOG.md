@@ -1,3 +1,12 @@
+## [0.1.1](https://github.com/MuyianKing/cli/compare/v0.1.0...v0.1.1) (2024-11-06)
+
+
+### Bug Fixes
+
+* :bug: 修改README.md ([c16c99d](https://github.com/MuyianKing/cli/commit/c16c99d9bace9c1007e63acc564e28a022fae9bb))
+
+
+
 ### Bug Fixes
 
 * :bug: 修改README.md ([c16c99d](https://github.com/MuyianKing/cli/commit/c16c99d9bace9c1007e63acc564e28a022fae9bb))
