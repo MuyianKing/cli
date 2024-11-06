@@ -1,4 +1,13 @@
-## [0.0.1](https://github.com/MuyianKing/cli/compare/v0.0.8...v0.0.1) (2024-11-06)
+## [0.0.1](https://github.com/MuyianKing/cli/compare/v0.0.9...v0.0.1) (2024-11-06)
+
+
+
+## [0.0.9](https://github.com/MuyianKing/cli/compare/v0.0.8...v0.0.9) (2024-11-06)
+
+
+### Bug Fixes
+
+* :bug: 修复无法生成日志 ([a42b78c](https://github.com/MuyianKing/cli/commit/a42b78c50cfb0f4bfb245dd2ecb22511263a4cc2))
 
 
 
