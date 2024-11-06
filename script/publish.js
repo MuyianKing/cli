@@ -37,18 +37,12 @@ function publish() {
   child_process.exec('pnpm log', (error) => {
     if (!error) {
       // 成功
-      child_process.exec('git add .', (error) => {
-        console.log('error1', error)
-
+      child_process.exec('git add .', () => {
         const version = `v${_config.version}`
 
-        console.log(`git push && git tag ${version} && git push origin ${version}`)
-
-        child_process.exec(`git commit -m"release: ${version}"`, (error) => {
-          console.log('error2', error)
-
+        child_process.exec(`git commit -m":package: ${version}"`, () => {
           child_process.exec(`git push && git tag ${version} && git push origin ${version}`, () => {
-            console.log('success')
+            console.log('publish success')
           })
         })
       })
