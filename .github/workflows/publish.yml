@@ -1,0 +1,21 @@
+name: npm publish
+
+on:
+  push:
+    tags:
+      - "v*"
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+      - name: Use Node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: 22.x
+      - name: npm publish
+        run: cd ./cli
+          npm run log
+          npm publish

@@ -1,5 +1,5 @@
 {
   "dependencies": {
-    "@mu/cli": "workspace:*"
+    "@muyianking/cli": "workspace:*"
   }
 }

@@ -1,15 +1,17 @@
 {
-  "name": "@hl/cli",
-  "version": "0.0.3",
-  "description": "华龙项目脚手架",
-  "author": "yangfeng",
+  "name": "@muyianking/cli",
+  "version": "0.0.7",
+  "description": "慕易安的脚手架",
+  "author": "muyian",
   "bin": {
-    "hl": "./bin/index.js"
+    "mu": "./bin/index.js"
   },
   "dependencies": {
     "copy-dir": "^1.3.0",
     "inquirer": "8.2.5",
     "mustache": "^4.2.0",
     "yargs": "^17.7.2"
-  }
+  },
+  "devDependencies": {},
+  "license": "ISC"
 }
