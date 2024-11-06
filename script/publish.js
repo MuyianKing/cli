@@ -41,6 +41,9 @@ function publish() {
         console.log('error1', error)
 
         const version = `v${_config.version}`
+
+        console.log(`git push && git tag ${version} && git push origin ${version}`)
+
         child_process.exec(`git commit -m"release: ${version}"`, (error) => {
           console.log('error2', error)
 
