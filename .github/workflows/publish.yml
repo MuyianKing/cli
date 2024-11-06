@@ -7,15 +7,37 @@ on:
 
 jobs:
   publish:
+    if: github.event.repository.owner.id == github.event.sender.id
     runs-on: ubuntu-latest
-
     steps:
       - uses: actions/checkout@v4
       - name: Use Node.js
         uses: actions/setup-node@v1
         with:
           node-version: 22.x
+          
+      - name: Set Publishing Config
+        run: npm config set '//registry.npmjs.org/:_authToken' "${NPM_TOKEN}"
+        env:
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+          
       - name: npm publish
         run: |
           cd ./cli
+<<<<<<< HEAD
           npm publish
+=======
+          # npm publish -r --tag latest --no-git-checks
+        env:
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+      - name: Automatic Releases
+        uses: marvinpinto/action-automatic-releases@v1.2.1
+        with:
+          repo_token: "${{ secrets.GITHUB_TOKEN }}"
+          automatic_release_tag: "latest"
+          prerelease: false
+          title: "Development Build"
+          
+
+>>>>>>> ebd3558f722176eefe86d8327a07c690ed27016f
