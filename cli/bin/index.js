@@ -1,28 +1,17 @@
 #!/usr/bin/env node
 
-const yargs = require('yargs');
-const path = require('path');
-const { inquirerPrompt } = require("./inquirer");
-const { copyDir, checkMkdirExists } = require("./copy");
+const yargs = require("yargs");
+const { inquirerProjectPrompt } = require("./command/inquirer.project");
+const { inquirerHtmlPrompt } = require("./command/inquirer.html");
+const { inquirerPrompt } = require("./command/inquirer");
 
-yargs.command(
-  ['create', 'c'],
-  '新建一个模板',
-  function (argv) {
-    inquirerPrompt(argv).then(answers => {
-      const { name, build_type } = answers;
-      const isMkdirExists = checkMkdirExists(
-        path.resolve(process.cwd(),`./${name}`)
-      );
+// 无操作提示
+inquirerPrompt();
 
-      if (isMkdirExists) {
-        console.log(`${name}文件夹已经存在`)
-      } else {
-        copyDir(
-          path.resolve(__dirname, `../template/${build_type}`),
-          path.resolve(process.cwd(), `./${name}`)
-        )
-      }
-    })
-  }
-).argv;
+yargs.command(["create", "c"], "新建一个项目", function (argv) {
+  inquirerProjectPrompt(argv);
+}).argv;
+
+yargs.command(["html"], "新建一个普通项目", function (argv) {
+  inquirerHtmlPrompt(argv);
+}).argv;
