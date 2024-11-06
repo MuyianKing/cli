@@ -18,8 +18,8 @@ jobs:
         with:
           node-version: 22.x
       - name: npm publish
-        run: cd ./cli
-          npm run log
+        run: |
+          cd ./cli
           npm publish -r --tag latest --no-git-checks
         env:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
