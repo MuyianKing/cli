@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "description": "慕易安的脚手架",
   "author": "muyian",
+  "license": "ISC",
   "bin": {
     "mu": "./bin/index.js"
   },
@@ -12,6 +13,5 @@
     "mustache": "^4.2.0",
     "yargs": "^17.7.2"
   },
-  "devDependencies": {},
-  "license": "ISC"
+  "devDependencies": {}
 }
