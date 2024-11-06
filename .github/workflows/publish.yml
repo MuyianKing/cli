@@ -4,6 +4,9 @@ on:
   push:
     tags:
       - "v*"
+      
+permissions:
+  contents: write   # This is required to create/push the new git tag
 
 jobs:
   publish:
