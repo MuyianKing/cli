@@ -9,7 +9,6 @@ function checkMkdirExists(path) {
   return fs.existsSync(path)
 };
 
-
 function mkdirGuard(target) {
   try {
     fs.mkdirSync(target, { recursive: true });
