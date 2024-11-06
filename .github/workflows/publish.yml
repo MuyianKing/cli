@@ -4,8 +4,6 @@ on:
   push:
     tags:
       - "v*"
-  # 允许你从 Actions 选项卡手动运行此工作流程
-  workflow_dispatch:
 
 jobs:
   publish:
@@ -35,7 +33,7 @@ jobs:
         with:
           repo_token: "${{ secrets.GITHUB_TOKEN }}"
           automatic_release_tag: "latest"
-          prerelease: true
+          prerelease: false
           title: "Development Build"
           
 
