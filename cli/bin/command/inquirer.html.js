@@ -1,9 +1,10 @@
-const inquirer = require('inquirer');
-const { copyDir, checkMkdirExists } = require("../copy");
-const path = require("path");
+const path = require('node:path')
+const process = require('node:process')
+const inquirer = require('inquirer')
+const { copyDir, checkMkdirExists } = require('../copy')
 
 function inquirerPrompt(argv) {
-  const { name } = argv;
+  const { name } = argv
   return new Promise((resolve, reject) => {
     inquirer.prompt([
       {
@@ -11,41 +12,42 @@ function inquirerPrompt(argv) {
         name: 'name',
         message: '项目名称',
         default: name,
-        validate: function (val) {
+        validate(val) {
           if (!val) {
-            return "请输入项目名称：";
+            return '请输入项目名称：'
           }
-          return true;
+          return true
         },
       },
-    ]).then(answers => {
+    ]).then((answers) => {
       resolve(answers)
-    }).catch(error => {
+    }).catch((error) => {
       reject(error)
     })
   })
-
 }
 
-exports.inquirerHtmlPrompt = function(argv){
+exports.inquirerHtmlPrompt = function (argv) {
   inquirerPrompt(argv).then((answers) => {
-    const { name } = answers;
+    const { name } = answers
     const isMkdirExists = checkMkdirExists(
-      path.resolve(process.cwd(), `./${name}`)
-    );
+      path.resolve(process.cwd(), `./${name}`),
+    )
 
     if (isMkdirExists) {
-      console.log(`${name}文件夹已经存在`);
+      console.log(`${name}文件夹已经存在`)
     } else {
       copyDir(
         path.resolve(__dirname, `../../template/html/vue`),
-        path.resolve(process.cwd(), `./${name}`)
-      );
+        path.resolve(process.cwd(), `./${name}`),
+      )
 
       console.log('\x1B[32m%s\x1B[0m', `
 create successful
-cd ./${name} and can use live-server run
+cd ./${name} 
+pnpm i
+live-server
 `)
     }
-  });
-};
+  })
+}

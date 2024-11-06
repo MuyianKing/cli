@@ -6,12 +6,6 @@ import getObjectFromJson from './utils/getObjectFromJson.js'
 
 const __dirname = fileURLToPath(import.meta.url)
 
-/**
- * 4、提交package.json和changelog.md
- * 5、创建tag
- * 6、提交tag
- */
-
 // 读取版本
 function getVersion() {
   const package_path = path.resolve(__dirname, `../../cli/package.json`)
@@ -40,7 +34,7 @@ function publish() {
       child_process.exec('git add .', () => {
         const version = `v${_config.version}`
 
-        child_process.exec(`git commit -m":package: ${version}"`, () => {
+        child_process.exec(`git commit -m"release: :package: ${version}"`, () => {
           child_process.exec(`git push && git tag ${version} && git push origin ${version}`, () => {
             console.log('publish success')
           })

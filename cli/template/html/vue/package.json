@@ -1,0 +1,14 @@
+{
+  "name": "html-vue",
+  "version": "1.0.0",
+  "description": "",
+  "author": "",
+  "license": "ISC",
+  "keywords": [],
+  "main": "index.js",
+  "scripts": {},
+  "dependencies": {
+    "element-plus": "^2.8.7",
+    "vue": "^3.5.12"
+  }
+}
