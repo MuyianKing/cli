@@ -20,4 +20,4 @@ jobs:
       - name: npm publish
         run: cd ./cli
           npm run log
-          npm publish
+          npm publish -r --tag latest --no-git-checks
