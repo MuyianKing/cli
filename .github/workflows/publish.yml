@@ -21,3 +21,5 @@ jobs:
         run: cd ./cli
           npm run log
           npm publish -r --tag latest --no-git-checks
+        env:
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
