@@ -16,6 +16,7 @@ jobs:
         with:
           node-version: 22.x
       - name: npm publish
-        run: cd ./cli
+        run: |
+          cd ./cli
           npm run log
           npm publish
