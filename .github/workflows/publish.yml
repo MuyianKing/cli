@@ -24,9 +24,6 @@ jobs:
       - name: npm publish
         run: |
           cd ./cli
-<<<<<<< HEAD
-          npm publish
-=======
           # npm publish -r --tag latest --no-git-checks
         env:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
@@ -38,6 +35,4 @@ jobs:
           automatic_release_tag: "latest"
           prerelease: false
           title: "Development Build"
-          
-
->>>>>>> ebd3558f722176eefe86d8327a07c690ed27016f
+        
