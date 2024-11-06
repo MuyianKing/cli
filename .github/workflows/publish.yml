@@ -17,6 +17,12 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: 22.x
+          
+      - name: Set Publishing Config
+        run: npm config set '//registry.npmjs.org/:_authToken' "${NPM_TOKEN}"
+        env:
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+          
       - name: npm publish
         run: |
           cd ./cli
