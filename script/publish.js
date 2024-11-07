@@ -8,7 +8,7 @@ const __dirname = fileURLToPath(import.meta.url)
 
 // 读取版本
 function getVersion() {
-  const package_path = path.resolve(__dirname, `../../cli/package.json`)
+  const package_path = path.resolve(__dirname, `../../code/package.json`)
   const _config = getObjectFromJson(package_path)
   return _config.version
 }
@@ -36,7 +36,7 @@ function publish() {
 
         child_process.exec(`git commit -m"release: :package: ${version}"`, () => {
           child_process.exec(`git push && git tag ${version} && git push origin ${version}`, () => {
-            console.log('publish success')
+            console.log('\x1B[32m%s\x1B[0m', 'publish success')
           })
         })
       })

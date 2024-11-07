@@ -3,12 +3,12 @@
 ## 安装
 
 ```bash
-// 私服环境
 pnpm i @muyianking/cli -g
 ```
 
 ### 使用
 
 ```bash
-mu
+mu create # 创建项目
+mu html   #创建简易html项目
 ```

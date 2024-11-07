@@ -17,11 +17,10 @@ export default antfu({
     'brace-style': ['error', '1tbs'],
     'style/brace-style': 0,
     'no-template-curly-in-string': 0,
-  
   },
   languageOptions: {
     globals: {
-      
+
     },
   },
 })
