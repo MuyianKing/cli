@@ -1,4 +1,5 @@
 import child_process from 'node:child_process'
+import fs from 'node:fs'
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
 import fsExtra from 'fs-extra'
@@ -8,12 +9,17 @@ const __dirname = fileURLToPath(import.meta.url)
 
 // 读取版本
 function getVersion() {
-  const package_path = path.resolve(__dirname, `../../code/package.json`)
+  const package_path = path.resolve(__dirname, `../../cli/package.json`)
   const _config = getObjectFromJson(package_path)
   return _config.version
 }
 
 function publish() {
+  // 将README.md拷贝到包中
+  fs.copyFile('./README.md', '../cli/cli/README.md', (error) => {
+    console.log(error)
+  })
+
   // 修改package.json版本号
   const _path = `../../package.json`
   const package_path = path.resolve(__dirname, _path)
