@@ -3,7 +3,16 @@ const path = require('node:path')
 const copydir = require('copy-dir')
 
 function copyDir(from, to, options) {
-  copydir.sync(from, to, options)
+  copydir.sync(from, to, {
+    filter(stat, filepath) {
+      if (stat === 'directory' && filepath.includes('node_modules')) {
+        return false
+      }
+
+      return true
+    },
+    ...options,
+  })
 }
 
 function checkMkdirExists(path) {

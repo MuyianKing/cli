@@ -6,7 +6,8 @@ exports.inquirerPrompt = function () {
   
   Usage:
   
-  mu web  创建一个项目
+  mu web  创建一个web项目
+  mu h5  创建一个h5项目
   mu html      创建普通项目（没有打包工具）
       `)
   }

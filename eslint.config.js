@@ -17,6 +17,7 @@ export default antfu({
     'brace-style': ['error', '1tbs'],
     'style/brace-style': 0,
     'no-template-curly-in-string': 0,
+    'no-unused-expressions': 0,
   },
   languageOptions: {
     globals: {
