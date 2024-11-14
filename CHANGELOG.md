@@ -1,10 +1,6 @@
 # [0.2.0](https://github.com/MuyianKing/cli/compare/v0.1.2...v0.2.0) (2024-11-14)
 
 
-
-## [0.1.2](https://github.com/MuyianKing/cli/compare/v0.1.1...v0.1.2) (2024-11-14)
-
-
 ### Bug Fixes
 
 * :bug: 去除.vscode无用配置和example包 ([2fc79a4](https://github.com/MuyianKing/cli/commit/2fc79a463de4a2a26322901ef9153728b1240616))
@@ -17,11 +13,6 @@
 * :sparkles: 打包时拷贝README.md到cli下 ([7f5334f](https://github.com/MuyianKing/cli/commit/7f5334ff2e59b78b7540b915bd7beeafccbe9427))
 * :sparkles: 新增h5-rsbuild模板 ([87865bc](https://github.com/MuyianKing/cli/commit/87865bc1f72695b475cc7bf4818e208bc6c1cada))
 * :sparkles: 增加README.md ([30bfa61](https://github.com/MuyianKing/cli/commit/30bfa61c93debc3eb18268c7336b799fbe9f724d))
-
-
-
-## [0.1.1](https://github.com/MuyianKing/cli/compare/v0.1.2...v0.1.1) (2024-11-14)
-
 
 
 ## [0.1.1](https://github.com/MuyianKing/cli/compare/v0.1.0...v0.1.1) (2024-11-06)
