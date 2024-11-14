@@ -1,3 +1,7 @@
+## [0.1.1](https://github.com/MuyianKing/cli/compare/v0.1.2...v0.1.1) (2024-11-14)
+
+
+
 ## [0.1.1](https://github.com/MuyianKing/cli/compare/v0.1.0...v0.1.1) (2024-11-06)
 
 
