@@ -1,5 +1,5 @@
 <script name="UserLoginNoAlive" setup>
-import { useRequest } from '@/hooks/useRequest'
+import { useRequest } from '@hl/hooks'
 import { clearUserData, login } from '@server/user'
 
 const form = reactive({

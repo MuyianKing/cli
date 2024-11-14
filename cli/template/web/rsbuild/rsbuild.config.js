@@ -1,5 +1,5 @@
 import path from 'node:path'
-import { defineConfig } from '@rsbuild/core'
+import { defineConfig, loadEnv } from '@rsbuild/core'
 import { pluginImageCompress } from '@rsbuild/plugin-image-compress'
 import { pluginSass } from '@rsbuild/plugin-sass'
 import { pluginVue } from '@rsbuild/plugin-vue'
@@ -9,10 +9,12 @@ import Components from 'unplugin-vue-components/rspack'
 import useAlias from './alias.config'
 
 const { alias_map } = useAlias()
+const { publicVars } = loadEnv({ prefixes: ['VITE_'] })
 
 export default defineConfig({
   html: {
     template: './public/index.html',
+    title: publicVars['import.meta.env.VITE_WEB_NAME'].replace(/"/g, ''),
   },
   plugins: [
     pluginVue(),
@@ -58,6 +60,7 @@ export default defineConfig({
   },
   source: {
     alias: alias_map,
+    define: publicVars,
     include: [
       path.resolve(__dirname, '../packages/task/src'),
       /[\\/]node_modules[\\/]/,

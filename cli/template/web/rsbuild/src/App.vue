@@ -29,7 +29,7 @@ const user = computed(() => {
 </template>
 
 <style lang="scss">
-@import '@style/custome.scss';
-@import '@style/main.scss';
-@import '@style/utils.scss';
+@use '@style/custome.scss';
+@use '@style/main.scss';
+@use '@style/utils.scss';
 </style>

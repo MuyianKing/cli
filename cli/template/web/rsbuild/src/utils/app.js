@@ -5,16 +5,16 @@ export const ENV_MODE = ['development', 'development.outer'].includes(import.met
 export const MODE = import.meta.env.MODE
 
 // 应用名称
-export const WEB_NAME = import.meta.env.PUBLIC_WEB_NAME
+export const WEB_NAME = import.meta.env.VITE_WEB_NAME
 
 // 系统缓存统一前缀
-export const PROJECT_PREFIX = import.meta.env.PUBLIC_PROJECT_PREFIX
+export const PROJECT_PREFIX = import.meta.env.VITE_PROJECT_PREFIX
 
 // 接口基本地址
-export const BASE_URL = import.meta.env.PUBLIC_BASE_URL
+export const BASE_URL = import.meta.env.VITE_BASE_URL
 
 // 是否跨域
-export const CORS = import.meta.env.PUBLIC_CORS
+export const CORS = import.meta.env.VITE_CORS
 
 // 图标服务地址
-export const ICONIFY_API = import.meta.env.PUBLIC_ICONIFY_API
+export const ICONIFY_API = import.meta.env.VITE_ICONIFY_API
