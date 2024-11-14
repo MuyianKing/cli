@@ -50,7 +50,7 @@ exports.inquirerProjectPrompt = function (argv) {
       console.log(`${name}文件夹已经存在`)
     } else {
       copyDir(
-        path.resolve(__dirname, ` ../../template/projects/${build_type}`),
+        path.resolve(__dirname, ` ../../template/web/${build_type}`),
         path.resolve(process.cwd(), `./${name}`),
       )
 

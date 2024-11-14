@@ -8,7 +8,7 @@ const { inquirerProjectPrompt } = require('./command/inquirer.project')
 // 无操作提示
 inquirerPrompt()
 
-yargs.command(['create', 'c'], '新建一个项目', (argv) => {
+yargs.command(['web'], '新建一个项目', (argv) => {
   inquirerProjectPrompt(argv)
 })
 

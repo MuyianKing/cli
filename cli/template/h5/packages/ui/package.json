@@ -1,0 +1,13 @@
+{
+  "name": "@hl/h5",
+  "type": "module",
+  "description": "",
+  "author": "",
+  "license": "ISC",
+  "keywords": [],
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {
+    "@multiavatar/multiavatar": "^1.0.7"
+  }
+}

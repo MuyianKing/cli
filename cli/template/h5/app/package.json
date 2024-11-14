@@ -1,0 +1,18 @@
+{
+  "name": "zj-powering-center",
+  "type": "module",
+  "version": "0.0.1",
+  "private": false,
+  "scripts": {
+    "dev": "npx rsbuild dev --mode development",
+    "build": "npx rsbuild build --mode production",
+    "build:gs": "npx rsbuild build --env-mode env.production.local",
+    "build:analyze": "cross-env BUNDLE_ANALYZE=true rsbuild build --mode production",
+    "preview": "rsbuild preview"
+  },
+  "dependencies": {
+    "echarts": "^5.5.1",
+    "@hl/h5": "workspace:*"
+  },
+  "devDependencies": {}
+}

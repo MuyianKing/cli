@@ -1,0 +1,57 @@
+{
+  "compilerOptions": {
+    "allowJs": true,
+    "baseUrl": ".",
+    "paths": {
+      "@/*": [
+        "./src/*"
+      ],
+      "@comp/*": [
+        "./src/components/*"
+      ],
+      "@utils/*": [
+        "./src/utils/*"
+      ],
+      "@def/*": [
+        "./src/default/*"
+      ],
+      "@server/*": [
+        "./src/server/*"
+      ],
+      "@model/*": [
+        "./src/model/*"
+      ],
+      "@views/*": [
+        "./src/views/*"
+      ],
+      "@hooks/*": [
+        "./src/hooks/*"
+      ],
+      "@img/*": [
+        "./src/assets/img/*"
+      ],
+      "@pinia/*": [
+        "./src/pinia/modules/*"
+      ],
+      "@style/*": [
+        "./src/assets/style/*"
+      ],
+      "@hl/utils": [
+        "../../node_modules/@hl/utils/*"
+      ],
+      "@api/*": [
+        "./src/api"
+      ],
+      "@app": [
+        "./src/utils/app.js"
+      ]
+    }
+  },
+  "include": [
+    "**/*"
+  ],
+  "exclude": [
+    "node_modules",
+    "dist"
+  ]
+}

@@ -22,8 +22,8 @@ pnpm i @muyianking/cli -g
 ### Usage
 
 ```bash
-# 创建项目
-mu create
+# 创建web项目
+mu web
 
 # 创建简易html项目
 mu html
