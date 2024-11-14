@@ -16,8 +16,8 @@ function getVersion() {
 
 function publish() {
   // 将README.md拷贝到包中
-  fs.copyFile('./README.md', '../cli/cli/README.md', (error) => {
-    console.log(error)
+  fs.copyFile('./README.md', '../cli/cli/README.md', () => {
+
   })
 
   // 修改package.json版本号
