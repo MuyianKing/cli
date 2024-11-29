@@ -12,6 +12,8 @@
 
   "editor.tabSize": 2,
 
+  "css.customData": [".vscode/tailwindcss.json"],
+
   // 自动保存格式化
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": "explicit",

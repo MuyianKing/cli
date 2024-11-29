@@ -11,8 +11,8 @@
     "preview": "rsbuild preview"
   },
   "dependencies": {
-    "echarts": "^5.5.1",
-    "@hl/h5": "workspace:*"
+    "@hl/h5": "workspace:*",
+    "echarts": "^5.5.1"
   },
   "devDependencies": {}
 }

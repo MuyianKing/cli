@@ -1,4 +1,5 @@
 import pages from '@/pages'
+import { RESOURCE_ID } from '@app'
 import { getRouters } from '@server/resource'
 import { cloneDeep } from 'lodash-es'
 import { defineStore } from 'pinia'
@@ -14,19 +15,12 @@ export default defineStore('dynamicRouter', {
     // 初始化动态路由
     async initDynamicRoutes(router) {
       try {
-        this.list = await getRouters({
-          label: 'wj.buildings',
-        })
+        this.list = await getRouters(RESOURCE_ID)
 
         addRoutes(router, filterAsyncRouter(cloneDeep(this.list)))
       } catch (e) {
         console.log(e.message)
       }
-    },
-    // 获取左侧菜单
-    async getRoutes() {
-      const result = await getRouters({ label: 'task' })
-      return result?.data || []
     },
     // 递归获取第一个子路由
     getFirstRoute() {

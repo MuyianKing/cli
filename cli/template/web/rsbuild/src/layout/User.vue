@@ -32,9 +32,6 @@ function handleDown(command) {
     </div>
     <template #dropdown>
       <el-dropdown-menu>
-        <el-dropdown-item command="user">
-          个人中心
-        </el-dropdown-item>
         <el-dropdown-item command="loginout" divided>
           退出登录
         </el-dropdown-item>

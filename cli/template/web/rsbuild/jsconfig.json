@@ -47,6 +47,9 @@
       ],
       "@api/*": [
         "./src/api"
+      ],
+      "@layout/*": [
+        "./src/layout/*"
       ]
     }
   },

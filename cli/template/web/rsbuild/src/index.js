@@ -2,12 +2,11 @@ import App from '@/App.vue'
 import pinia from '@/pinia'
 import router from '@/router'
 import api from '@api'
-import { BASE_URL, ICONIFY_API, PROJECT_PREFIX, WEB_NAME } from '@app'
-import * as common from '@hl/utils/es/common'
+import { ICONIFY_API, PROJECT_PREFIX, WEB_NAME } from '@app'
 import * as message from '@hl/ui/src/utils/message'
+import * as common from '@hl/utils/es/common'
 import http from '@http'
 import { addAPIProvider, disableCache, enableCache } from '@iconify/vue'
-import Token from '@server/token'
 import variables from '@style/theme.module.scss'
 import dayjs from 'dayjs'
 import { createApp } from 'vue'
@@ -16,7 +15,7 @@ import useEcharts from '../src/utils/echarts'
 useEcharts()
 
 addAPIProvider('', {
-  resources: [BASE_URL + ICONIFY_API],
+  resources: [ICONIFY_API],
 })
 disableCache('local')
 enableCache('session')
@@ -52,5 +51,4 @@ useDynamicRoutesStore().initDynamicRoutes(router).finally(() => {
 
   const theme = useThemeStore()
   theme.initTheme()
-  new Token()
 })

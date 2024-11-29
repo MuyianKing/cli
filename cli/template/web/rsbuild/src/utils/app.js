@@ -13,8 +13,14 @@ export const PROJECT_PREFIX = import.meta.env.VITE_PROJECT_PREFIX
 // 接口基本地址
 export const BASE_URL = import.meta.env.VITE_BASE_URL
 
-// 是否跨域
-export const CORS = import.meta.env.VITE_CORS
-
 // 图标服务地址
-export const ICONIFY_API = import.meta.env.VITE_ICONIFY_API
+const icon_url = import.meta.env.VITE_ICONIFY_API
+export const ICONIFY_API = icon_url.startsWith('http') ? icon_url : (BASE_URL + icon_url)
+
+// 资源标识
+export const RESOURCE_ID = import.meta.env.VITE_RESOPURCE_ID
+
+// 其他环境变量
+export const ENV_CONFIG = {
+  title: import.meta.env.VITE_WEB_NAME,
+}

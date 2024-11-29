@@ -2,7 +2,7 @@ import { BASE_URL } from '@app'
 import { isTruth } from '@hl/utils'
 import axios from 'axios'
 
-class RespError extends Error {
+class CustomError extends Error {
   constructor(error) {
     super(error.error)
     this.error = error.error || ''
@@ -14,9 +14,7 @@ class RespError extends Error {
 axios.defaults.timeout = 60000 * 5
 
 /** 设置请求基地址 */
-const baseUrl = BASE_URL
-
-axios.defaults.baseURL = baseUrl
+axios.defaults.baseURL = BASE_URL
 
 // 添加响应拦截器
 axios.interceptors.response.use(
@@ -31,12 +29,12 @@ axios.interceptors.response.use(
     let resp_error = null
     if (error.response && error.response.data) {
       const { data } = error.response
-      resp_error = new RespError({
+      resp_error = new CustomError({
         errno: data.status || data.errno,
         error: data.error,
       })
     } else {
-      resp_error = new RespError({
+      resp_error = new CustomError({
         errno: error?.response?.status || 999,
         error: error?.response?.statusText || error?.message || '程序出错或网络连接失败',
       })
@@ -50,12 +48,6 @@ axios.interceptors.response.use(
         window.location.href = `#/login?msg=${encodeURIComponent(resp_error.error)}`
         window.location.reload()
       }
-    }
-
-    // 报错接口上报
-    if (+resp_error.errno !== 401 && +resp_error.errno !== 200 && error.config.url !== '/task/api/task/error/logs') {
-      const user = useUserStore()
-      post('/task/api/task/error/logs', { status: resp_error.errno, message: error.message, police_id: user?.police_id, length: error.message?.length, url: error.config.url })
     }
 
     return Promise.reject(resp_error)
@@ -75,7 +67,7 @@ export function post(url, params, options) {
   params = params || {}
   options = options || {}
   options.headers = options.headers || {}
-  options.headers['Content-Type'] = options.headers['Content-Type'] || 'application/json; charset=UTF-8'
+  options.headers['Content-Type'] = options.headers['Content-Type'] || 'application/json;charset=UTF-8'
 
   // json需要转一下
   if (options.headers['Content-Type'].startsWith('application/json')) {

@@ -38,7 +38,6 @@ function formatComponentInstance(component, route) {
   const component_name = component.type.name
   /**
    * 如果组件名以Template结尾则重新生成一个组件实例并缓存起来
-   * TODO: 可设置最大缓存个数
    */
   if (component_name && component_name.endsWith('Template')) {
     if (component) {

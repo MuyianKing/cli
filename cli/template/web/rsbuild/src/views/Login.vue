@@ -1,6 +1,7 @@
 <script name="UserLoginNoAlive" setup>
 import { useRequest } from '@hl/hooks'
-import { clearUserData, login } from '@server/user'
+import { clearUserData } from '@server/user'
+import { login } from "@hl/tyyh"
 
 const form = reactive({
   username: '',
@@ -88,14 +89,14 @@ watch(() => route.query, (query) => {
                 <el-form-item label="账号" prop="username">
                   <el-input v-model="form.username" placeholder="请输入账号">
                     <template #prefix>
-                      <img alt="用户名" src="@img/login/username.png" style="width: 18px;">
+                      <hl-icon icon="iconoir:user" size="26" color="#409eff" />
                     </template>
                   </el-input>
                 </el-form-item>
                 <el-form-item label="密码" prop="password">
                   <el-input v-model="form.password" placeholder="请输入密码" show-password type="password" @keyup.enter="submitForm">
                     <template #prefix>
-                      <img alt="密码" src="@img/login/password.png" style="width: 18px;">
+                      <hl-icon icon="fluent-emoji-high-contrast:locked" size="23" color="#409eff" />
                     </template>
                   </el-input>
                 </el-form-item>
@@ -124,7 +125,7 @@ $url: '@img/login/';
   display: flex;
   justify-content: center;
   align-items: center;
-  background-image: url(#{$url}bg.png);
+  background-image: url(#{$url}bg.jpg);
   background-size: cover;
 
   .login-box-wrapper {
@@ -149,7 +150,7 @@ $url: '@img/login/';
       width: 60%;
       height: 100%;
       padding: 10px;
-      background-image: url(#{$url}left-bg.png);
+      background-image: url(#{$url}left-bg.jpg);
       background-size: 100% 100%;
       background-position: center top;
       background-repeat: no-repeat;
@@ -203,7 +204,7 @@ $url: '@img/login/';
     max-width: 600px !important;
     height: 500px !important;
 
-    & > img {
+    &>img {
       height: 100%;
       width: 100%;
     }
@@ -213,7 +214,7 @@ $url: '@img/login/';
     width: 100% !important;
     margin: 0 auto;
     background-color: transparent !important;
-    background-image: url(#{$url}left-bg.png) !important;
+    background-image: url(#{$url}left-bg.jpg) !important;
     background-size: 100% 100% !important;
     background-position: center center !important;
     background-repeat: no-repeat !important;
