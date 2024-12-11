@@ -1,6 +1,6 @@
-const process = require('node:process')
+import process from 'node:process'
 
-exports.inquirerPrompt = function () {
+export default function () {
   if (process.argv.length === 2) {
     console.log(`缺少执行的命令：npm <command>
   

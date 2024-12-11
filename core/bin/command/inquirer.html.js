@@ -1,7 +1,9 @@
-const path = require('node:path')
-const process = require('node:process')
-const inquirer = require('inquirer')
-const { copyDir, checkMkdirExists } = require('../copy')
+import path from 'node:path'
+import process from 'node:process'
+import inquirer from 'inquirer'
+import ora from 'ora'
+import { checkMkdirExists } from '../utils/copy.js'
+import download from '../utils/download.js'
 
 function inquirerPrompt(argv) {
   const { name } = argv
@@ -19,6 +21,17 @@ function inquirerPrompt(argv) {
           return true
         },
       },
+      {
+        type: 'list',
+        name: 'build_type',
+        message: '框架',
+        choices: ['vue'],
+        filter(value) {
+          return {
+            vue: 'vue',
+          }[value]
+        },
+      },
     ]).then((answers) => {
       resolve(answers)
     }).catch((error) => {
@@ -27,9 +40,9 @@ function inquirerPrompt(argv) {
   })
 }
 
-exports.inquirerHtmlPrompt = function (argv) {
-  inquirerPrompt(argv).then((answers) => {
-    const { name } = answers
+export default function (argv) {
+  inquirerPrompt(argv).then(async (answers) => {
+    const { name, build_type } = answers
     const isMkdirExists = checkMkdirExists(
       path.resolve(process.cwd(), `./${name}`),
     )
@@ -37,17 +50,12 @@ exports.inquirerHtmlPrompt = function (argv) {
     if (isMkdirExists) {
       console.log(`${name}文件夹已经存在`)
     } else {
-      copyDir(
-        path.resolve(__dirname, `../../template/html/vue`),
-        path.resolve(process.cwd(), `./${name}`),
-      )
+      const _path = ['html', build_type]
 
-      console.log('\x1B[32m%s\x1B[0m', `
-create successful
-cd ./${name} 
-pnpm i
-live-server
-`)
+      // 下载文件
+      await download(name, _path)
+
+      ora(`created successfully`).succeed()
     }
   })
 }

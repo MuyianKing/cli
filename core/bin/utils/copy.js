@@ -1,6 +1,6 @@
-const fs = require('node:fs')
-const path = require('node:path')
-const copydir = require('copy-dir')
+import fs from 'node:fs'
+import path from 'node:path'
+import copydir from 'copy-dir'
 
 function copyDir(from, to, options) {
   copydir.sync(from, to, {
@@ -44,6 +44,8 @@ function copyFile(from, to) {
   fs.writeFileSync(to, buffer)
 }
 
-exports.copyFile = copyFile
-exports.checkMkdirExists = checkMkdirExists
-exports.copyDir = copyDir
+export {
+  checkMkdirExists,
+  copyDir,
+  copyFile,
+}

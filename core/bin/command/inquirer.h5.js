@@ -1,7 +1,9 @@
-const path = require('node:path')
-const process = require('node:process')
-const inquirer = require('inquirer')
-const { copyDir, checkMkdirExists } = require('../copy')
+import path from 'node:path'
+import process from 'node:process'
+import inquirer from 'inquirer'
+import ora from 'ora'
+import { checkMkdirExists } from '../utils/copy.js'
+import download from '../utils/download.js'
 
 function inquirerPrompt(argv) {
   const { name } = argv
@@ -39,8 +41,8 @@ function inquirerPrompt(argv) {
   })
 }
 
-exports.inquirerH5Prompt = function (argv) {
-  inquirerPrompt(argv).then((answers) => {
+export default function (argv) {
+  inquirerPrompt(argv).then(async (answers) => {
     const { name, build_type } = answers
     const isMkdirExists = checkMkdirExists(
       path.resolve(process.cwd(), `./${name}`),
@@ -49,14 +51,11 @@ exports.inquirerH5Prompt = function (argv) {
     if (isMkdirExists) {
       console.log(`${name}文件夹已经存在`)
     } else {
-      console.log('__dirname', __dirname)
+      const _path = ['h5', build_type]
 
-      copyDir(
-        path.resolve(__dirname, `../../template/h5/${build_type}`),
-        path.resolve(process.cwd(), `./${name}`),
-      )
-
-      console.log('\x1B[32m%s\x1B[0m', `cd ./${name}`)
+      // 下载文件
+      await download(name, _path)
+      ora(`created successfully`).succeed()
     }
   })
 }
