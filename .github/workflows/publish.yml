@@ -27,7 +27,7 @@ jobs:
           
       - name: npm publish
         run: |
-          cd ./cli
+          cd ./core
           npm publish -r --tag latest --no-git-checks
         env:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}

@@ -2,8 +2,13 @@
   "name": "@muyianking/cli",
   "version": "0.2.0",
   "description": "慕易安的脚手架",
-  "author": "muyian",
+  "author": "muyianking",
   "license": "ISC",
+  "keywords": [
+    "cli",
+    "vue",
+    "rsbuild"
+  ],
   "bin": {
     "mu": "./bin/index.js"
   },
