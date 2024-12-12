@@ -19,7 +19,7 @@ yarn global add @muyianking/cli
 pnpm i @muyianking/cli -g
 ```
 
-### Usage
+## Usage
 
 ```bash
 # 创建web项目
@@ -31,3 +31,8 @@ mu h5
 # 创建简易html项目
 mu html
 ```
+
+## 贡献者
+
+<!-- readme: collaborators,contributors -start -->
+<!-- readme: collaborators,contributors -end -->
