@@ -1,3 +1,18 @@
+## [0.2.1](https://github.com/MuyianKing/cli/compare/v0.2.0...v0.2.1) (2024-12-12)
+
+
+### Bug Fixes
+
+* :bug: 更新web-rsbuild模板 ([93a521a](https://github.com/MuyianKing/cli/commit/93a521ae26c1d15f2a24490795e1bc3fe9b4c970))
+
+
+### Features
+
+* :sparkles: 去除模板 ([b025716](https://github.com/MuyianKing/cli/commit/b025716172d61599d66758b47282a55ab1054956))
+* :sparkles: 项目下载变更为从github仓库拉取 ([d2db84e](https://github.com/MuyianKing/cli/commit/d2db84e498065da27c8a29c2c197b93a04322bb4))
+
+
+
 # [0.2.0](https://github.com/MuyianKing/cli/compare/v0.1.2...v0.2.0) (2024-11-14)
 
 

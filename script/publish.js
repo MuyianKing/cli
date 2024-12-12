@@ -1,55 +1,74 @@
-import child_process from 'node:child_process'
-import fs from 'node:fs'
-import path from 'node:path'
-import { fileURLToPath } from 'node:url'
+import process from 'node:process'
 import fsExtra from 'fs-extra'
+import { copy } from './utils/file.js'
 import getObjectFromJson from './utils/getObjectFromJson.js'
+import { exec, getParams } from './utils/tools.js'
 
-const __dirname = fileURLToPath(import.meta.url)
+const root = process.cwd()
 
 // 读取版本
 function getVersion() {
-  const package_path = path.resolve(__dirname, `../../cli/package.json`)
+  // 先从控制台读取
+  const { v } = getParams()
+  if (v) {
+    return {
+      version: v,
+      from: 'cmd',
+    }
+  }
+
+  // 没有再从package.json读取
+  const package_path = `${root}/package.json`
   const _config = getObjectFromJson(package_path)
-  return _config.version
+  return {
+    version: _config.version,
+    from: 'package',
+  }
 }
 
-function publish() {
-  // 将README.md拷贝到包中
-  fs.copyFile('./README.md', '../cli/cli/README.md', () => {
-
-  })
-
-  // 修改package.json版本号
-  const _path = `../../package.json`
-  const package_path = path.resolve(__dirname, _path)
+/**
+ * 覆写版本号
+ * @param {string} package_path 重写的package.json路径
+ * @param {string} version 版本号
+ */
+function reWriteVersion(package_path, version) {
   const _config = getObjectFromJson(package_path)
-  _config.version = getVersion()
-
+  _config.version = version
   const fileStr = JSON.stringify(_config, '', '\t')
   fsExtra.outputFile(
     package_path,
     fileStr,
     'utf-8',
   )
-
-  // 生成changelog.md
-  child_process.exec('pnpm log', (error) => {
-    if (!error) {
-      // 成功
-      child_process.exec('git add .', () => {
-        const version = `v${_config.version}`
-
-        child_process.exec(`git commit -m"release: :package: ${version}"`, () => {
-          child_process.exec(`git push && git tag ${version} && git push origin ${version}`, () => {
-            console.log('\x1B[32m%s\x1B[0m', 'publish success')
-          })
-        })
-      })
-    } else {
-      console.log('生成changelog.md失败', error)
-    }
-  })
 }
 
-publish()
+// 发布入口
+async function main() {
+  // 将README.md拷贝到包中
+  await copy('./README.md', `${root}/core/README.md`)
+
+  // 修改package.json版本号
+  const { version, from } = getVersion()
+
+  // 从命令行读取的版本需要回写package.json
+  if (from !== 'package') {
+    reWriteVersion(`${root}/package.json`, version)
+  }
+
+  // 回写core的package.json
+  reWriteVersion(`${root}/core/package.json`, version)
+
+  // 生成changelog.md
+  await exec('pnpm log')
+
+  const _version = `v${version}`
+
+  // git commit
+  await exec('git add .')
+  await exec(`git commit -m"release: :package: ${_version}"`)
+
+  // git提交并生成版本tag
+  await exec(`git push && git tag ${_version} && git push origin ${_version}`)
+}
+
+main()
