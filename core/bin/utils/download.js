@@ -3,7 +3,7 @@ import process from 'node:process'
 import downloadGitRepo from 'download-git-repo'
 import { removeSync } from 'fs-extra/esm'
 import ora from 'ora'
-import { copyDir } from '/copy.js'
+import { copyDir } from './copy.js'
 
 const url = 'direct:https://github.com/MuyianKing/template/archive/refs/heads/main.zip'
 

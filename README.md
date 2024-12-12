@@ -25,6 +25,9 @@ pnpm i @muyianking/cli -g
 # 创建web项目
 mu web
 
+# 创建h5项目
+mu h5
+
 # 创建简易html项目
 mu html
 ```

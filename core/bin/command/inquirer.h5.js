@@ -48,14 +48,15 @@ export default function (argv) {
       path.resolve(process.cwd(), `./${name}`),
     )
 
+    const spinner = ora().start()
     if (isMkdirExists) {
-      console.log(`${name}文件夹已经存在`)
+      spinner.warning(`${name}文件夹已经存在`)
     } else {
       const _path = ['h5', build_type]
 
       // 下载文件
       await download(name, _path)
-      ora(`created successfully`).succeed()
+      spinner.succeed(`created successfully`)
     }
   })
 }

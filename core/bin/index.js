@@ -8,7 +8,7 @@ import inquirerHtmlPrompt from './command/inquirer.html.js'
 import inquirerPrompt from './command/inquirer.js'
 import inquirerWebPrompt from './command/inquirer.web.js'
 
-// // 无操作提示
+// 无操作提示
 inquirerPrompt()
 
 yargs(hideBin(process.argv)).command('web', '新建一个项目', (argv) => {

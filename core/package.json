@@ -1,24 +1,24 @@
 {
-	"name": "@muyianking/cli",
-	"type": "module",
-	"version": "0.2.1",
-	"description": "慕易安的脚手架",
-	"author": "muyianking",
-	"license": "ISC",
-	"keywords": [
-		"cli",
-		"vue",
-		"rsbuild"
-	],
-	"bin": {
-		"mu": "./bin/index.js"
-	},
-	"dependencies": {
-		"copy-dir": "^1.3.0",
-		"fs-extra": "^11.2.0",
-		"inquirer": "8.2.5",
-		"mustache": "^4.2.0",
-		"ora": "^8.1.1",
-		"yargs": "^17.7.2"
-	}
+  "name": "@muyianking/cli",
+  "type": "module",
+  "version": "0.2.1",
+  "description": "慕易安的脚手架",
+  "author": "muyianking",
+  "license": "ISC",
+  "keywords": [
+    "cli",
+    "vue",
+    "rsbuild"
+  ],
+  "bin": {
+    "mu": "./bin/index.js"
+  },
+  "dependencies": {
+    "copy-dir": "^1.3.0",
+    "fs-extra": "^11.2.0",
+    "inquirer": "8.2.5",
+    "mustache": "^4.2.0",
+    "ora": "^8.1.1",
+    "yargs": "^17.7.2"
+  }
 }
