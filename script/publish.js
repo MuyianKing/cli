@@ -1,7 +1,6 @@
 import process from 'node:process'
 import fsExtra from 'fs-extra'
-import { copy } from './utils/file.js'
-import getObjectFromJson from './utils/getObjectFromJson.js'
+import { copy, getObjectFromJson } from './utils/file.js'
 import { exec, getParams } from './utils/tools.js'
 
 const root = process.cwd()
