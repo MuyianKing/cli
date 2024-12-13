@@ -4,7 +4,9 @@
 快速创建项目脚手架
 </p>
 
-![NPM Version](https://img.shields.io/npm/v/%40muyianking%2Fcli) ![NPM License](https://img.shields.io/npm/l/%40muyianking%2Fcli)
+![NPM Version](https://img.shields.io/npm/v/%40muyianking%2Fcli?link=https%3A%2F%2Fwww.npmjs.com%2Fpackage%2F%40muyianking%2Fcli)
+![NPM Downloads](https://img.shields.io/npm/dm/%40muyianking%2Fcli?link=https%3A%2F%2Fwww.npmjs.com%2Fpackage%2F%40muyianking%2Fcli)
+![NPM License](https://img.shields.io/npm/l/%40muyianking%2Fcli?link=https%3A%2F%2Fwww.npmjs.com%2Fpackage%2F%40muyianking%2Fcli)
 
 ## Install
 
