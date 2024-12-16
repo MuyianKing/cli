@@ -6,10 +6,9 @@
 
 <p align="center">
   <a href="https://www.npmjs.com/package/@muyianking/cli" style="text-decoration: none;"><img  src="https://img.shields.io/npm/v/%40muyianking%2Fcli"/></a>
-  <a href="https://nodejs.org/en/about/previous-releases" style="text-decoration: none;"><img  src="https://img.shields.io/npm/l/%40muyianking%2Fcli"/></a>
-  <a href="https://github.com/vitejs/vite/actions/workflows/ci.yml" style="text-decoration: none;"><img  src="https://img.shields.io/npm/dm/%40muyianking%2Fcli"/></a>
+  <a href="https://www.npmjs.com/package/@muyianking/cli" style="text-decoration: none;"><img  src="https://img.shields.io/npm/l/%40muyianking%2Fcli"/></a>
+  <a href="https://www.npmjs.com/package/@muyianking/cli" style="text-decoration: none;"><img  src="https://img.shields.io/npm/dm/%40muyianking%2Fcli"/></a>
 </p>
-
 
 ## Install
 
@@ -37,7 +36,7 @@ mu h5
 mu html
 ```
 
-## 贡献者
+## Contributors
 
 <!-- readme: collaborators,contributors -start -->
 <table>

@@ -37,7 +37,7 @@ export default async function (project_name, build_type) {
   const temp_path = path.join(process.cwd(), project_name)
   await download(GITHUB_TEMPLATE_URL, temp_path, {
     // 过滤指定的代码
-    filter: (file) => {
+    filter(file) {
       return file.path.includes(build_type.join('\\'))
     },
   })
@@ -45,10 +45,7 @@ export default async function (project_name, build_type) {
   spinner.succeed('downloaded successfully')
 
   // 将文件拷贝到项目根目录
-  copyDir(
-    `${temp_path}/${build_type.join('/')}`,
-    temp_path,
-  )
+  copyDir(`${temp_path}/${build_type.join('/')}`, temp_path)
 
   // 删除源文件
   removeSync(`${temp_path}/${build_type[0]}`)
