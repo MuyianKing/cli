@@ -46,6 +46,9 @@ async function main() {
   // 将README.md拷贝到包中
   await copy('./README.md', `${root}/core/README.md`)
 
+  // 将LICENSE拷贝到包中
+  await copy('./LICENSE', `${root}/core/LICENSE`)
+
   // 修改package.json版本号
   const { version, from } = getVersion()
 
