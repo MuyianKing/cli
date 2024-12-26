@@ -32,6 +32,9 @@ mu web
 # 创建h5项目
 mu h5
 
+# 创建Lib项目
+mu lib
+
 # 创建简易html项目
 mu html
 ```
