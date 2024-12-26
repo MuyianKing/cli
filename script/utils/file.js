@@ -5,7 +5,7 @@ import { copyFile, readFileSync } from 'node:fs'
  * @param {string} path 文件路径
  * @returns
  */
-export default function getObjectFromJson(path) {
+export function getObjectFromJson(path) {
   const data = readFileSync(path)
   return JSON.parse(data)
 }
