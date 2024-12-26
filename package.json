@@ -1,43 +1,43 @@
 {
-  "name": "@muyianking/cli",
-  "type": "module",
-  "version": "0.2.1",
-  "private": false,
-  "scripts": {
-    "update-dep": "npm-check-updates && ncu -u && pnpm i",
-    "commit": "git add . && git cz",
-    "lint": "git add . && lint-staged",
-    "husky-lint": "git add . && lint-staged",
-    "prepare": "husky",
-    "log": "conventional-changelog -p angular -i CHANGELOG.md -s",
-    "publish": "node ./script/publish.js"
-  },
-  "dependencies": {
-    "download-git-repo": "^3.0.2",
-    "fs-extra": "^11.2.0"
-  },
-  "devDependencies": {
-    "@antfu/eslint-config": "^3.8.0",
-    "@commitlint/cli": "^19.5.0",
-    "@commitlint/config-conventional": "^19.5.0",
-    "@eslint/eslintrc": "^3.1.0",
-    "cz-git": "^1.10.1",
-    "eslint": "^9.13.0",
-    "eslint-plugin-format": "^0.1.2",
-    "husky": "^9.1.6",
-    "lint-staged": "^15.2.10"
-  },
-  "resolutions": {
-    "bin-wrapper": "npm:bin-wrapper-china"
-  },
-  "config": {
-    "commitizen": {
-      "path": "node_modules/cz-git"
-    }
-  },
-  "lint-staged": {
-    "*.{js,ts,vue}": [
-      "eslint --fix"
-    ]
-  }
+	"name": "@muyianking/cli",
+	"type": "module",
+	"version": "0.2.2",
+	"private": false,
+	"scripts": {
+		"update-dep": "npm-check-updates && ncu -u && pnpm i",
+		"commit": "git add . && git cz",
+		"lint": "git add . && lint-staged",
+		"husky-lint": "git add . && lint-staged",
+		"prepare": "husky",
+		"log": "conventional-changelog -p angular -i CHANGELOG.md -s",
+		"publish": "node ./script/publish.js"
+	},
+	"dependencies": {
+		"download-git-repo": "^3.0.2",
+		"fs-extra": "^11.2.0"
+	},
+	"devDependencies": {
+		"@antfu/eslint-config": "^3.8.0",
+		"@commitlint/cli": "^19.5.0",
+		"@commitlint/config-conventional": "^19.5.0",
+		"@eslint/eslintrc": "^3.1.0",
+		"cz-git": "^1.10.1",
+		"eslint": "^9.13.0",
+		"eslint-plugin-format": "^0.1.2",
+		"husky": "^9.1.6",
+		"lint-staged": "^15.2.10"
+	},
+	"resolutions": {
+		"bin-wrapper": "npm:bin-wrapper-china"
+	},
+	"config": {
+		"commitizen": {
+			"path": "node_modules/cz-git"
+		}
+	},
+	"lint-staged": {
+		"*.{js,ts,vue}": [
+			"eslint --fix"
+		]
+	}
 }

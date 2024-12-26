@@ -1,3 +1,23 @@
+## [0.2.2](https://github.com/MuyianKing/cli/compare/v0.2.1...v0.2.2) (2024-12-26)
+
+
+### Bug Fixes
+
+* :bug: 优化提示信息 ([7c89803](https://github.com/MuyianKing/cli/commit/7c89803bec6c39a6eff541cd8094d5a090383892))
+* :bug: 优化下载 ([2caadf2](https://github.com/MuyianKing/cli/commit/2caadf25d3208b010aeb557cb255588cb3c3ab55))
+* :bug: npm 标识增加跳转 ([77fe990](https://github.com/MuyianKing/cli/commit/77fe990053b31dc80ea25c4c1e50de69f0752fc0))
+* :bug: rEADME.md增加download ([b87d1df](https://github.com/MuyianKing/cli/commit/b87d1dfe6b2582b3b777f9aeb7d8562e64a9ae65))
+
+
+### Features
+
+* :sparkles: 去除npm标识underline ([2cfb226](https://github.com/MuyianKing/cli/commit/2cfb2267c7fccf8473c7d8af445553376f8a0c26))
+* :sparkles: 优化打包脚本工具函数 ([473d7b5](https://github.com/MuyianKing/cli/commit/473d7b5e3fd17784c081666cbae5fe72823f2151))
+* :sparkles: 增加lib模块 ([8db505c](https://github.com/MuyianKing/cli/commit/8db505c4d167bc2ae505cd6cc0d7948e082cad52))
+* :sparkles: rEADME.md增加贡献人 ([fcb0e57](https://github.com/MuyianKing/cli/commit/fcb0e5750f4b46c7e7fb8c42f114c804a54eb39e))
+
+
+
 ## [0.2.1](https://github.com/MuyianKing/cli/compare/v0.2.0...v0.2.1) (2024-12-12)
 
 
