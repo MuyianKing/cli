@@ -1,5 +1,15 @@
 import process from 'node:process'
+import { figlet } from 'figlet'
 import ora from 'ora'
+
+figlet('Hello World!!', (err, data) => {
+  if (err) {
+    console.log('Something went wrong...')
+    console.dir(err)
+    return
+  }
+  console.log(data)
+})
 
 export default function () {
   const cmd = ['web', 'h5', 'html', 'lib']

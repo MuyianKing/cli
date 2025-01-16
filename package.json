@@ -13,8 +13,6 @@
     "publish": "node ./script/publish.js"
   },
   "dependencies": {
-    "download-git-repo": "^3.0.2",
-    "fs-extra": "^11.2.0"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^3.8.0",
