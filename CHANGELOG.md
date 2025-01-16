@@ -1,3 +1,17 @@
+## [0.2.3](https://github.com/MuyianKing/cli/compare/v0.2.2...v0.2.3) (2025-01-16)
+
+
+### Bug Fixes
+
+* :bug: 修复依赖缺失问题 ([348857f](https://github.com/MuyianKing/cli/commit/348857f79b5c2771b4b70f2cfb32f5d6c0e80f39))
+
+
+### Features
+
+* :sparkles: 增加LICENSE ([86cdb97](https://github.com/MuyianKing/cli/commit/86cdb97e7c807dfa00a87eabc7c556526460c351))
+
+
+
 ## [0.2.2](https://github.com/MuyianKing/cli/compare/v0.2.1...v0.2.2) (2024-12-26)
 
 
