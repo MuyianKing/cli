@@ -30,6 +30,9 @@ importers:
       '@eslint/eslintrc':
         specifier: ^3.1.0
         version: 3.1.0
+      '@muyianking/config':
+        specifier: ^0.0.4
+        version: 0.0.4
       cz-git:
         specifier: ^1.10.1
         version: 1.10.1
@@ -305,6 +308,9 @@ packages:
 
   '@jridgewell/sourcemap-codec@1.5.0':
     resolution: {integrity: sha512-gv3ZRaISU3fjPAgNsriBRqGWQL6quFx04YMPW/zD8XMLsU32mhCCbfbO6KZFLjvYpCZ8zyDEgqsgf+PwPaM7GQ==}
+
+  '@muyianking/config@0.0.4':
+    resolution: {integrity: sha512-0bL5nVEgH/Yzg87xdkWYUN9s7Hf+NRzUI9rn2MVAs2weMCgyzH9ZKxjfAuZv5jmwAUF6L6jMIeO2za98IY121A==}
 
   '@nodelib/fs.scandir@2.1.5':
     resolution: {integrity: sha512-vq24Bq3ym5HEQm2NKCr3yXDwjc7vTsEThRDnkp2DK9p1uqLR+DHurm/NOTo0KG7HYHU7eppKZj3MyqYuMBf62g==}
@@ -2716,6 +2722,8 @@ snapshots:
   '@humanwhocodes/retry@0.4.1': {}
 
   '@jridgewell/sourcemap-codec@1.5.0': {}
+
+  '@muyianking/config@0.0.4': {}
 
   '@nodelib/fs.scandir@2.1.5':
     dependencies:
