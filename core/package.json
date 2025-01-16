@@ -1,7 +1,7 @@
 {
 	"name": "@muyianking/cli",
 	"type": "module",
-	"version": "0.2.3",
+	"version": "0.2.4",
 	"description": "慕易安的脚手架",
 	"author": "muyianking",
 	"license": "ISC",
