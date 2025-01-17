@@ -1,7 +1,6 @@
 import process from 'node:process'
-import fsExtra from 'fs-extra'
-import { copy, getObjectFromJson } from './utils/file.js'
-import { exec, getParams } from './utils/tools.js'
+import { exec, getParams } from '@muyianking/build'
+import { copySync, readJsonSync, writeJsonSync } from 'fs-extra/esm'
 
 const root = process.cwd()
 
@@ -18,7 +17,8 @@ function getVersion() {
 
   // 没有再从package.json读取
   const package_path = `${root}/package.json`
-  const _config = getObjectFromJson(package_path)
+  const _config = readJsonSync(package_path)
+
   return {
     version: _config.version,
     from: 'package',
@@ -31,23 +31,21 @@ function getVersion() {
  * @param {string} version 版本号
  */
 function reWriteVersion(package_path, version) {
-  const _config = getObjectFromJson(package_path)
+  const _config = readJsonSync(package_path)
   _config.version = version
-  const fileStr = JSON.stringify(_config, '', '\t')
-  fsExtra.outputFile(
-    package_path,
-    fileStr,
-    'utf-8',
-  )
+
+  writeJsonSync(package_path, _config, {
+    spaces: 2,
+  })
 }
 
 // 发布入口
 async function main() {
   // 将README.md拷贝到包中
-  await copy('./README.md', `${root}/core/README.md`)
+  await copySync('./README.md', `${root}/core/README.md`)
 
   // 将LICENSE拷贝到包中
-  await copy('./LICENSE', `${root}/core/LICENSE`)
+  await copySync('./LICENSE', `${root}/core/LICENSE`)
 
   // 修改package.json版本号
   const { version, from } = getVersion()
