@@ -1,7 +1,7 @@
 {
   "name": "@muyianking/cli",
   "type": "module",
-  "version": "0.2.3",
+  "version": "0.2.4",
   "private": false,
   "scripts": {
     "update-dep": "npm-check-updates && ncu -u && pnpm i",
@@ -21,6 +21,7 @@
     "@commitlint/config-conventional": "^19.5.0",
     "@eslint/eslintrc": "^3.1.0",
     "@muyianking/build": "^0.0.2",
+    "@muyianking/config": "^0.0.4",
     "@types/fs-extra": "^11.0.4",
     "cz-git": "^1.10.1",
     "eslint": "^9.13.0",

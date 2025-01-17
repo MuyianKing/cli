@@ -30,6 +30,9 @@ importers:
       '@muyianking/build':
         specifier: ^0.0.2
         version: 0.0.2
+      '@muyianking/config':
+        specifier: ^0.0.4
+        version: 0.0.4
       '@types/fs-extra':
         specifier: ^11.0.4
         version: 11.0.4
@@ -311,6 +314,9 @@ packages:
 
   '@muyianking/build@0.0.2':
     resolution: {integrity: sha512-pqdxHNEwPXdFFsvfpxdqjOvXK6VfOyeXEIIvfIrfbMlOjQNGJbEas9xiQFm7aU/CNSwE2aYbjo7/hRJHzUjGRQ==}
+
+  '@muyianking/config@0.0.4':
+    resolution: {integrity: sha512-0bL5nVEgH/Yzg87xdkWYUN9s7Hf+NRzUI9rn2MVAs2weMCgyzH9ZKxjfAuZv5jmwAUF6L6jMIeO2za98IY121A==}
 
   '@nodelib/fs.scandir@2.1.5':
     resolution: {integrity: sha512-vq24Bq3ym5HEQm2NKCr3yXDwjc7vTsEThRDnkp2DK9p1uqLR+DHurm/NOTo0KG7HYHU7eppKZj3MyqYuMBf62g==}
@@ -2342,6 +2348,8 @@ snapshots:
   '@muyianking/build@0.0.2':
     dependencies:
       fs-extra: 11.2.0
+
+  '@muyianking/config@0.0.4': {}
 
   '@nodelib/fs.scandir@2.1.5':
     dependencies:
