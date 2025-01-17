@@ -12,20 +12,18 @@
     "log": "conventional-changelog -p angular -i CHANGELOG.md -s",
     "publish": "node ./script/publish.js"
   },
-  "dependencies": {
-    "fs-extra": "^11.2.0"
-  },
+  "dependencies": {},
   "devDependencies": {
     "@antfu/eslint-config": "^3.8.0",
     "@commitlint/cli": "^19.5.0",
     "@commitlint/config-conventional": "^19.5.0",
-    "@eslint/eslintrc": "^3.1.0",
     "@muyianking/build": "^0.0.2",
     "@muyianking/config": "^0.0.4",
     "@types/fs-extra": "^11.0.4",
     "cz-git": "^1.10.1",
     "eslint": "^9.13.0",
     "eslint-plugin-format": "^0.1.2",
+    "fs-extra": "^11.2.0",
     "husky": "^9.1.6",
     "lint-staged": "^15.2.10"
   },

@@ -1,54 +1,20 @@
 import process from 'node:process'
-import { exec, getParams } from '@muyianking/build'
-import { copySync, readJsonSync, writeJsonSync } from 'fs-extra/esm'
+import { exec } from '@muyianking/build'
+import { copySync } from 'fs-extra/esm'
+import { getVersion, reWriteVersion } from './utils'
 
 const root = process.cwd()
-
-// 读取版本
-function getVersion() {
-  // 先从控制台读取
-  const { v } = getParams()
-  if (v) {
-    return {
-      version: v,
-      from: 'cmd',
-    }
-  }
-
-  // 没有再从package.json读取
-  const package_path = `${root}/package.json`
-  const _config = readJsonSync(package_path)
-
-  return {
-    version: _config.version,
-    from: 'package',
-  }
-}
-
-/**
- * 覆写版本号
- * @param {string} package_path 重写的package.json路径
- * @param {string} version 版本号
- */
-function reWriteVersion(package_path, version) {
-  const _config = readJsonSync(package_path)
-  _config.version = version
-
-  writeJsonSync(package_path, _config, {
-    spaces: 2,
-  })
-}
 
 // 发布入口
 async function main() {
   // 将README.md拷贝到包中
-  await copySync('./README.md', `${root}/core/README.md`)
+  copySync('./README.md', `${root}/core/README.md`)
 
   // 将LICENSE拷贝到包中
-  await copySync('./LICENSE', `${root}/core/LICENSE`)
+  copySync('./LICENSE', `${root}/core/LICENSE`)
 
-  // 修改package.json版本号
-  const { version, from } = getVersion()
+  // 读取版本号
+  const { version, from } = getVersion(`${root}/package.json`)
 
   // 从命令行读取的版本需要回写package.json
   if (from !== 'package') {

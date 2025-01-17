@@ -1,9 +1,8 @@
 import path from 'node:path'
 import process from 'node:process'
 import downloadGitRepo from 'download-git-repo'
-import { removeSync } from 'fs-extra/esm'
+import { copySync, removeSync } from 'fs-extra/esm'
 import ora from 'ora'
-import { copyDir } from './copy.js'
 
 /**
  * 从github仓库下载代码
@@ -35,6 +34,7 @@ export default async function (project_name, build_type) {
   const spinner = ora(`downloading`).start()
 
   const temp_path = path.join(process.cwd(), project_name)
+
   await download(GITHUB_TEMPLATE_URL, temp_path, {
     // 过滤指定的代码
     filter(file) {
@@ -45,7 +45,7 @@ export default async function (project_name, build_type) {
   spinner.succeed('downloaded successfully')
 
   // 将文件拷贝到项目根目录
-  copyDir(`${temp_path}/${build_type.join('/')}`, temp_path)
+  copySync(`${temp_path}/${build_type.join('/')}`, temp_path)
 
   // 删除源文件
   removeSync(`${temp_path}/${build_type[0]}`)
