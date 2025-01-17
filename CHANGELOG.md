@@ -12,7 +12,6 @@
 * :sparkles: 增加LICENSE ([86cdb97](https://github.com/MuyianKing/cli/commit/86cdb97e7c807dfa00a87eabc7c556526460c351))
 
 
-
 ## [0.2.2](https://github.com/MuyianKing/cli/compare/v0.2.1...v0.2.2) (2024-12-26)
 
 

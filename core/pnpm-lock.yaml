@@ -8,9 +8,6 @@ importers:
 
   .:
     dependencies:
-      copy-dir:
-        specifier: ^1.3.0
-        version: 1.3.0
       download-git-repo:
         specifier: ^3.0.2
         version: 3.0.2
@@ -20,9 +17,6 @@ importers:
       inquirer:
         specifier: 8.2.5
         version: 8.2.5
-      mustache:
-        specifier: ^4.2.0
-        version: 4.2.0
       ora:
         specifier: ^8.1.1
         version: 8.1.1
@@ -159,9 +153,6 @@ packages:
   content-disposition@0.5.4:
     resolution: {integrity: sha512-FveZTNuGw04cxlAiWbzi6zTAL/lhehaWbTtgluJh4/E95DqMwTmha3KZN1aAWA8cFIhHzMZUvLevkw5Rqk+tSQ==}
     engines: {node: '>= 0.6'}
-
-  copy-dir@1.3.0:
-    resolution: {integrity: sha512-Q4+qBFnN4bwGwvtXXzbp4P/4iNk0MaiGAzvQ8OiMtlLjkIKjmNN689uVzShSM0908q7GoFHXIPx4zi75ocoaHw==}
 
   core-util-is@1.0.3:
     resolution: {integrity: sha512-ZQBvi1DcpJ4GDqanjucZ2Hj3wEO5pZDS89BWbkcrvdxksJorwUDDZamX9ldFkp9aw2lmBDLgkObEA4DWNJ9FYQ==}
@@ -455,10 +446,6 @@ packages:
 
   minimatch@3.1.2:
     resolution: {integrity: sha512-J7p63hRiAjw1NDEww1W7i37+ByIrOWO5XQQAzZ3VOcL0PNybwpfmV/N05zFAzwQ9USyEcX6t3UO+K5aqBQOIHw==}
-
-  mustache@4.2.0:
-    resolution: {integrity: sha512-71ippSywq5Yb7/tVYyGbkBggbU8H3u5Rz56fH60jGFgr8uHwxs+aSKeqmluIVzM0m0kB7xQjKS6qPfd0b2ZoqQ==}
-    hasBin: true
 
   mute-stream@0.0.8:
     resolution: {integrity: sha512-nnbWWOkoWyUsTjKrhgD0dcz22mdkSnpYqbEjIm2nhwhuxlSkpywJmBo8h0ZqJdkp73mb90SssHkN4rsRaBAfAA==}
@@ -881,8 +868,6 @@ snapshots:
     dependencies:
       safe-buffer: 5.2.1
 
-  copy-dir@1.3.0: {}
-
   core-util-is@1.0.3: {}
 
   decode-uri-component@0.2.2: {}
@@ -1194,8 +1179,6 @@ snapshots:
   minimatch@3.1.2:
     dependencies:
       brace-expansion: 1.1.11
-
-  mustache@4.2.0: {}
 
   mute-stream@0.0.8: {}
 
