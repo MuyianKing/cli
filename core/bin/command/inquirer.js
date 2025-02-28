@@ -1,12 +1,22 @@
 import process from 'node:process'
+import { readJsonSync } from 'fs-extra/esm'
 import ora from 'ora'
+import { exec } from '@muyianking/build'
 
-export default function () {
+const spinner = ora().start()
+
+export default async function () {
+  // 版本不为最新停止
+  const _V = await handleVersion()
+  if (_V === false) {
+    return
+  }
+
   const cmd = ['web', 'h5', 'html', 'lib']
+  const argv = process.argv
 
-  const spinner = ora().start()
-
-  if ((process.argv.length === 3 && cmd.includes(process.argv[2])) || process.argv[2]?.includes('help')) {
+  // 如果输入三个参数并且最后一个参数不在已定义的命令中，或者输入help
+  if ((argv.length === 3 && cmd.includes(argv[2])) || argv[2]?.includes('help')) {
     spinner.stop()
     return
   }
@@ -20,4 +30,24 @@ export default function () {
         `)
 
   spinner.stop()
+}
+
+// 处理版本号
+async function handleVersion() {
+  // 获取安装版本
+  const package_config = readJsonSync(`${process.cwd()}/package.json`)
+  const cur_version = package_config.version
+
+  // 获取最新版本
+  const last_version = (await exec("npm view @muyianking/cli version")).trim()
+  if (last_version !== cur_version) {
+    spinner.warn(`最新版本为${last_version}，当前版本为${cur_version}，请先安装最新版本`)
+    return false
+  }
+
+
+  return {
+    cur_version,
+    last_version
+  }
 }

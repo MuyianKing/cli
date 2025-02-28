@@ -10,19 +10,21 @@ import inquirerLibPrompt from './command/inquirer.lib.js'
 import inquirerWebPrompt from './command/inquirer.web.js'
 
 // 无操作提示
-inquirerPrompt()
+inquirerPrompt().then(() => {
+  yargs(hideBin(process.argv))
+    .command('web', '新建一个WEB项目', (argv) => {
+      inquirerWebPrompt(argv)
+    })
+    .command('h5', '新建一个H5项目', (argv) => {
+      inquirerH5Prompt(argv)
+    })
+    .command(['lib'], '新建一个Lib项目', (argv) => {
+      inquirerLibPrompt(argv)
+    })
+    .command(['html'], '新建一个HTML项目', (argv) => {
+      inquirerHtmlPrompt(argv)
+    })
+    .argv
 
-yargs(hideBin(process.argv))
-  .command('web', '新建一个WEB项目', (argv) => {
-    inquirerWebPrompt(argv)
-  })
-  .command('h5', '新建一个H5项目', (argv) => {
-    inquirerH5Prompt(argv)
-  })
-  .command(['lib'], '新建一个Lib项目', (argv) => {
-    inquirerLibPrompt(argv)
-  })
-  .command(['html'], '新建一个HTML项目', (argv) => {
-    inquirerHtmlPrompt(argv)
-  })
-  .argv
+})
+

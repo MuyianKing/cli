@@ -5,7 +5,10 @@ export default antfu({
   formatters: true,
   ignores: ['**/public/**'],
 }, {
-  rules: base,
+  rules: {
+    ...base,
+    'no-unused-expressions': 0,
+  },
   languageOptions: {
     globals: {
 
