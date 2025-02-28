@@ -2,6 +2,10 @@ import process from 'node:process'
 import { readJsonSync } from 'fs-extra/esm'
 import ora from 'ora'
 import { exec } from '@muyianking/build'
+import path from 'path';
+import { fileURLToPath } from 'url';
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 const spinner = ora().start()
 
@@ -34,8 +38,10 @@ export default async function () {
 
 // 处理版本号
 async function handleVersion() {
+
   // 获取安装版本
-  const package_config = readJsonSync(`${process.cwd()}/package.json`)
+  const package_config = readJsonSync(`${__dirname}/../../package.json`)
+
   const cur_version = package_config.version
 
   // 获取最新版本

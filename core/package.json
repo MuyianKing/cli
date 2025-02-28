@@ -15,6 +15,7 @@
   },
   "dependencies": {
     "@muyianking/build": "^0.0.4",
+    "degit": "^2.8.4",
     "download-git-repo": "^3.0.2",
     "fs-extra": "^11.3.0",
     "inquirer": "12.4.2",
