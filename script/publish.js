@@ -1,7 +1,7 @@
 import process from 'node:process'
 import { exec } from '@muyianking/build'
 import { copySync } from 'fs-extra/esm'
-import { getVersion, reWriteVersion } from './utils'
+import { getVersion, reWriteVersion } from './utils.js'
 
 const root = process.cwd()
 

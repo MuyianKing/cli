@@ -1,3 +1,18 @@
+## [0.2.5](https://github.com/MuyianKing/cli/compare/v0.2.4...v0.2.5) (2025-02-28)
+
+
+### Bug Fixes
+
+* :bug: 优化模板处理过程 ([e267a66](https://github.com/MuyianKing/cli/commit/e267a66bb0f205f71ea5cd1d30d1973c61a7e944))
+
+
+### Features
+
+* :sparkles: 模板下载由download-git-repo变更为degit ([243de8a](https://github.com/MuyianKing/cli/commit/243de8af56dc9deb45b6b11d611b12f201df764d))
+* :sparkles: 添加版本判断 ([7cc904d](https://github.com/MuyianKing/cli/commit/7cc904d91150c23ce41fce702f4b3bcd23890426))
+
+
+
 ## [0.2.4](https://github.com/MuyianKing/cli/compare/v0.2.2...v0.2.3) (2025-01-16)
 
 
