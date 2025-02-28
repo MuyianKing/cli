@@ -7,33 +7,43 @@ import { fileURLToPath } from 'url';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
-const spinner = ora().start()
+let spinner = null
 
 export default async function () {
+  const argv = process.argv
+  const command = argv[2]?.replace("--", "")
+  const cmd = ['web', 'h5', 'html', 'lib']
+
   // 版本不为最新停止
   const _V = await handleVersion()
-  if (_V === false) {
-    return
+
+  let result = true
+
+  // 输出版本
+  if (command === 'v' || command === 'version') {
+    console.log('v' + _V.cur_version);
+    return false
   }
 
-  const cmd = ['web', 'h5', 'html', 'lib']
-  const argv = process.argv
+  spinner = ora().start()
 
-  // 如果输入三个参数并且最后一个参数不在已定义的命令中，或者输入help
-  if ((argv.length === 3 && cmd.includes(argv[2])) || argv[2]?.includes('help')) {
-    spinner.stop()
-    return
+  if ((argv.length === 3 && cmd.includes(command))) {
+    // 如果输入三个参数并且最后一个参数不在已定义的命令中
+    result = true
+  } else if (_V === false) {
+    result = false
+  } else {
+    spinner.succeed(`Usage:
+
+      mu web   创建web项目
+      mu h5    创建h5项目
+      mu lib   创建Lib项目
+      mu html  创建普通项目（没有构建工具）
+          `)
   }
-
-  spinner.succeed(`Usage:
-
-    mu web   创建一个web项目
-    mu h5    创建一个h5项目
-    mu lib   创建一个Lib项目
-    mu html  创建普通项目（没有打包工具）
-        `)
-
   spinner.stop()
+
+  return result
 }
 
 // 处理版本号

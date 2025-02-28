@@ -10,8 +10,15 @@ import inquirerLibPrompt from './command/inquirer.lib.js'
 import inquirerWebPrompt from './command/inquirer.web.js'
 
 // 无操作提示
-inquirerPrompt().then(() => {
+inquirerPrompt().then((data) => {
+  if (!data) {
+    return
+  }
+
+
   yargs(hideBin(process.argv))
+    .help(false)
+    .version(false)
     .command('web', '新建一个WEB项目', (argv) => {
       inquirerWebPrompt(argv)
     })
