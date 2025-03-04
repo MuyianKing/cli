@@ -26,6 +26,7 @@ export function getVersion(package_path) {
     }
   }
 
+  // 从package.json读
   const _config = readJsonSync(package_path)
 
   return {

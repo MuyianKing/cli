@@ -15,7 +15,6 @@ inquirerPrompt().then((data) => {
     return
   }
 
-
   yargs(hideBin(process.argv))
     .help(false)
     .version(false)

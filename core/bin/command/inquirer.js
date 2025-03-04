@@ -34,7 +34,6 @@ export default async function () {
     result = false
   } else {
     spinner.succeed(`Usage:
-
       mu web   创建web项目
       mu h5    创建h5项目
       mu lib   创建Lib项目
