@@ -1,0 +1,2 @@
+# husky 钩子由 sh 执行，CRLF 会让命令带上 \r 导致找不到命令
+.husky/** text eol=lf

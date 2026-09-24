@@ -1,3 +1,9 @@
+# [0.3.0](https://github.com/MuyianKing/cli/compare/v0.2.5...v0.3.0) (2026-09-24)
+
+
+### Features
+
+* :sparkles: 增加mu version和mu help命令 ([7883972](https://github.com/MuyianKing/cli/commit/78839720520058088cab1675c9a5d81dacd4897c))
 ## [0.2.5](https://github.com/MuyianKing/cli/compare/v0.2.4...v0.2.5) (2025-02-28)
 
 

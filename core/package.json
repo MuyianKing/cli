@@ -1,10 +1,10 @@
 {
   "name": "@muyianking/cli",
   "type": "module",
-  "version": "0.2.5",
+  "version": "0.3.0",
   "description": "慕易安的脚手架",
   "author": "muyianking",
-  "license": "ISC",
+  "license": "MIT",
   "keywords": [
     "cli",
     "vue",
@@ -13,10 +13,12 @@
   "bin": {
     "mu": "./bin/index.js"
   },
+  "engines": {
+    "node": ">=18"
+  },
   "dependencies": {
     "@muyianking/build": "^0.0.4",
     "degit": "^2.8.4",
-    "download-git-repo": "^3.0.2",
     "fs-extra": "^11.3.0",
     "inquirer": "12.4.2",
     "ora": "^8.2.0",

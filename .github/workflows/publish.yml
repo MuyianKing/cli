@@ -5,7 +5,7 @@ on:
   push:
     tags:
       - v*
-      
+
 permissions:
   contents: write
 
@@ -19,22 +19,21 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: 22.x
-          
+
       - name: Set Publishing Config
         run: npm config set '//registry.npmjs.org/:_authToken' "${NPM_TOKEN}"
         env:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-          
+
       - name: npm publish
         run: |
           cd ./core
-          npm publish -r --tag latest --no-git-checks
+          npm publish --tag latest
         env:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       - name: Automatic Releases
         uses: marvinpinto/action-automatic-releases@v1.2.1
         with:
-          repo_token: "${{ secrets.GITHUB_TOKEN }}"
+          repo_token: '${{ secrets.GITHUB_TOKEN }}'
           prerelease: false
-        

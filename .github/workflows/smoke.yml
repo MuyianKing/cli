@@ -1,0 +1,26 @@
+name: smoke test
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+jobs:
+  smoke:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Use Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22.x
+
+      # 只装运行时依赖，和用户全局安装后拿到的环境一致
+      - name: Install dependencies
+        run: npm install --omit=dev --no-audit --no-fund
+        working-directory: ./core
+
+      - name: Run smoke test
+        run: node ./script/smoke.js

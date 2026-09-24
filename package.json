@@ -1,7 +1,7 @@
 {
   "name": "@muyianking/cli",
   "type": "module",
-  "version": "0.2.5",
+  "version": "0.3.0",
   "private": false,
   "scripts": {
     "update-dep": "npm-check-updates && ncu -u && pnpm i",
@@ -13,16 +13,16 @@
     "publish": "node ./script/publish.js"
   },
   "devDependencies": {
+    "@antfu/eslint-config": "^3.14.0",
     "@muyianking/build": "^0.0.2",
     "@muyianking/config": "^0.0.8",
     "@types/fs-extra": "^11.0.4",
+    "conventional-changelog-cli": "^5.0.0",
     "cz-git": "^1.11.0",
+    "eslint": "^9.18.0",
     "fs-extra": "^11.3.0",
     "husky": "^9.1.7",
     "lint-staged": "^15.4.1"
-  },
-  "resolutions": {
-    "bin-wrapper": "npm:bin-wrapper-china"
   },
   "config": {
     "commitizen": {
