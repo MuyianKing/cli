@@ -5,6 +5,10 @@
   "description": "慕易安的脚手架",
   "author": "muyianking",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MuyianKing/cli.git"
+  },
   "keywords": [
     "cli",
     "vue",
