@@ -12,6 +12,10 @@
     "log": "conventional-changelog -p angular -i CHANGELOG.md -s",
     "publish": "node ./script/publish.js"
   },
+  "repository": {
+		"type": "git",
+		"url": "https://github.com/MuyianKing/utils.git"
+	},
   "devDependencies": {
     "@antfu/eslint-config": "^3.14.0",
     "@muyianking/build": "^0.0.2",
