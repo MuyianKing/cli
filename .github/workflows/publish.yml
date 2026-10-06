@@ -2,12 +2,14 @@ name: npm publish
 
 # 发布版本触发
 on:
+  workflow_dispatch:
   push:
     tags:
       - v*
 
 permissions:
-  contents: write
+  contents: write # 写权限用于创建 GitHub Release
+  id-token: write # Required for OIDC
 
 jobs:
   publish:
@@ -15,22 +17,18 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Use Node.js
-        uses: actions/setup-node@v1
-        with:
-          node-version: 22.x
 
-      - name: Set Publishing Config
-        run: npm config set '//registry.npmjs.org/:_authToken' "${NPM_TOKEN}"
-        env:
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+      # npm 11.5.1+ 才支持 OIDC trusted publishing，Node 24 自带该版本
+      - name: Use Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          registry-url: 'https://registry.npmjs.org/'
 
       - name: npm publish
         run: |
           cd ./core
-          npm publish --tag latest
-        env:
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+          npm publish --tag latest --access public
 
       - name: Automatic Releases
         uses: marvinpinto/action-automatic-releases@v1.2.1
